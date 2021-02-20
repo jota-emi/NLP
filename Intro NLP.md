@@ -8,63 +8,55 @@ O Processamento de Linguagem Natural (PLN ou NLP) mescla ciência da computaçã
   
 ## Conceitos Básicos
   ### Tokenization
-  Tokenization is breaking the raw text into small chunks. Tokenization breaks the raw text into words, sentences called tokens. These tokens help in understanding the context or developing the model for the NLP. The tokenization helps in interpreting the meaning of the text by analyzing the sequence of the words.
-For example, the text “It is raining” can be tokenized into ‘It’, ‘is’, ‘raining’
+  A tokenização é o processo de quebrar o texto bruto em pequenos pedaços. A tokenização divide o texto bruto em palavras, frases chamadas tokens. Esses tokens ajudam a compreender o contexto ou desenvolver o modelo para o processamento. A tokenização ajuda a interpretar o significado do texto, analisando a sequência das palavras.
+Por exemplo, o texto “It is raining” pode ser transformado em ‘It’, ‘is’, ‘raining.
   ### Stemming
-  Stemming is basically removing the suffix from a word and reduce it to its root word.
-For example: “Flying” is a word and its suffix is “ing”, if we remove “ing” from “Flying” then we will get base word or root word which is “Fly”.
+  Stemming é basicamente a remoção do sufixo de uma palavra, reduzindo-a para o radical. Por exemplo: "Flying é uma palavra e seu sufixo é "ing", que indica ação presente, entretando, remove-se o "ing", deixando apenas o radical "Fly", que é a expressão que dá significado a palavra.
   ### Lemmatization
-  In simpler forms, a method that switches any kind of a word to its base root mode is called Lemmatization. 
+  Em resumo, Lemmatization é um método responsável por agrupar diferentes formas flexionadas de palavras, tendo o mesmo significado. É semelhante ao radical do Stemming, mas por sua vez, fornece a palavra que tem algum significado no dicionário. A análise morfológica exigiria a extração do lema correto de cada palavra.
 
- 
+Por exemplo, a Lemmatização identifica claramente a forma básica de ‘troubled’ para ‘trouble’ denotando algum significado, enquanto que o Stemming cortará a parte ‘ed’ e a converterá em ‘troubl’, que tem o significado errado e erros ortográficos.
 
-In other words, Lemmatization is a method responsible for grouping different inflected forms of words into the root form, having the same meaning. It is similar to stemming, in turn, it gives the stripped word that has some dictionary meaning. The Morphological analysis would require the extraction of the correct lemma of each word. 
+‘Troubled’ -> Lematização -> ‘troubled’ e erro
 
- 
-
-For example, Lemmatization clearly identifies the base form of ‘troubled’ to ‘trouble’’ denoting some meaning whereas, Stemming will cut out ‘ed’ part and convert it into ‘troubl’ which has the wrong meaning and spelling errors.
-
- 
-
-‘troubled’ -> Lemmatization -> ‘troubled’, and error
-
-‘troubled’ -> Stemming -> ‘troubl’
+‘Troubled’ -> Stemming -> ‘troubl’
 
 COLOCAR IMAGEM DA COMPARAÇÃO
   ### Stop Words
-  In computing, stop words are words that are filtered out before or after the natural language data (text) are processed. While “stop words” typically refers to the most common words in a language, all-natural language processing tools don’t use a single universal list of stop words.
- Stopwords are the words in any language which does not add much meaning to a sentence. They can safely be ignored without sacrificing the meaning of the sentence. For some search engines, these are some of the most common, short function words, such as the, is, at, which, and on. In this case, stop words can cause problems when searching for phrases that include them, particularly in names such as “The Who” or “Take That”.
-When to remove stop words?
-If we have a task of text classification or sentiment analysis then we should remove stop words as they do not provide any information to our model, i.e keeping out unwanted words out of our corpus, but if we have the task of language translation then stopwords are useful, as they have to be translated along with other words.
- ### Bag of Words
- The bag-of-words (BOW) model is a representation that turns arbitrary text into fixed-length vectors by counting how many times each word appears. This process is often referred to as vectorization.
-Let’s understand this with an example. Suppose we wanted to vectorize the following:
-the cat sat
-the cat sat in the hat
-the cat with the hat
-We’ll refer to each of these as a text document.
-Step 1: Determine the Vocabulary
-We first define our vocabulary, which is the set of all words found in our document set. The only words that are found in the 3 documents above are: the, cat, sat, in, the, hat, and with.
-Step 2: Count
-To vectorize our documents, all we have to do is count how many times each word appears:
-Image for post
-Now we have length-6 vectors for each document!
-the cat sat: [1, 1, 1, 0, 0, 0]
-the cat sat in the hat: [2, 1, 1, 1, 1, 0]
-the cat with the hat: [2, 1, 0, 0, 1, 1]
-Notice that we lose contextual information, e.g. where in the document the word appeared, when we use BOW. It’s like a literal bag-of-words: it only tells you what words occur in the document, not where they occurred.
-Implementing BOW in Python
-Now that you know what BOW is, I’m guessing you’ll probably need to implement it. Here’s my preferred way of doing it, which uses Keras’s Tokenizer class:
+ Na computação, stop-words são palavras filtradas antes ou depois do processamento dos dados de linguagem natural (texto). Embora "stop words" normalmente se refiram às palavras mais comuns em um idioma, as ferramentas de processamento de linguagem totalmente natural não usam uma única lista universal de palavras irrelevantes.
+ Stop words são palavras em qualquer idioma que não acrescentam muito significado a uma frase. Eles podem ser ignoradas com segurança sem sacrificar o significado da frase. Para alguns mecanismos de pesquisa, essas são algumas das palavras de função curtas mais comuns, como, "é", "em", "qual" e assim por diante. Nesse caso, as palavras irrelevantes podem causar problemas ao pesquisar frases que as incluam, especialmente em nomes como “The Who” ou “Take That”.
+Quando remover palavras de parada?
+Se temos uma tarefa de classificação de texto ou análise de sentimento, devemos remover as palavras irrelevantes, uma vez que não fornecem nenhuma informação ao nosso modelo, ou seja, manter as palavras indesejadas fora do nosso corpus, mas se temos a tarefa de tradução de idiomas, as palavras irrelevantes são úteis, pois devem ser traduzidos junto com outras palavras.
 
-Running that code gives us:
-Vocabulary: ['the', 'cat', 'sat', 'hat', 'in', 'with']
-[[0. 1. 1. 1. 0. 0. 0.]
- [0. 2. 1. 1. 1. 1. 0.]
- [0. 2. 1. 0. 1. 0. 1.]]
-Notice that the vectors here have length 7 instead of 6 because of the extra 0 element at the beginning. This is an inconsequential detail - Keras reserves index 0 and never assigns it to any word.
-How is BOW useful?
-Despite being a relatively basic model, BOW is often used for Natural Language Processing (NLP) tasks like Text Classification. Its strengths lie in its simplicity: it’s inexpensive to compute, and sometimes simpler is better when positioning or contextual info aren’t relevant.
-I’ve written a blog post that uses BOW for profanity detection — check it out if you’re curious to see BOW in action!
+ ### Bag of Words
+O modelo de saco de palavras (BOW) é uma representação que transforma texto arbitrário em vetores de comprimento fixo, contando quantas vezes cada palavra aparece. Esse processo geralmente é denominado vetorização.
+
+Vamos entender isso com um exemplo. Suponha que desejamos vetorizar o seguinte:
+o gato sentou
+o gato sentou no chapéu
+o gato com o chapéu
+Vamos nos referir a cada um deles como um documento de texto.
+
+Etapa 1: determinar o vocabulário
+
+Primeiro definimos nosso vocabulário, que é o conjunto de todas as palavras encontradas em nosso conjunto de documentos. As únicas palavras encontradas nos 3 documentos acima são: the, cat, sat, in, the, hat e with.
+
+Etapa 2: contar
+
+Para vetorizar nossos documentos, tudo o que precisamos fazer é contar quantas vezes cada palavra aparece:
+
+Imagem para postagem
+
+Agora temos vetores de comprimento 6 para cada documento!
+o gato sentou: [1, 1, 1, 0, 0, 0]
+o gato sentou no chapéu: [2, 1, 1, 1, 1, 0]
+o gato com o chapéu: [2, 1, 0, 0, 1, 1]
+
+Observe que perdemos informações contextuais, por exemplo onde no documento a palavra apareceu, quando usamos BOW. É como um saco de palavras literal: apenas informa quais palavras ocorrem no documento, não onde ocorreram.
+
+-Como o BOW é útil?
+
+Apesar de ser um modelo relativamente básico, o BOW é freqüentemente usado para tarefas de Processamento de Linguagem Natural (PNL), como Classificação de Texto. Seus pontos fortes estão na simplicidade: é barato de calcular e, às vezes, mais simples é melhor quando o posicionamento ou as informações contextuais não são relevantes.
   
 ## Exercício: Perguntas e Respostas
   ### Métricas de Comparação
