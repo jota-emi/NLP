@@ -15,3 +15,10 @@
 
 #### Primeiro Algoritmo com BERT (KTrain)
 - [Análise de Sentimento Binária em comentários do IMDB](https://colab.research.google.com/drive/1FxHkImkG7k4QaWtPjBEUH5wU3Nw6T2pM?usp=sharing)
+
+#### Observações:
+
+* Foi utilizada uma biblioteca chamada **Ktrain** que é simples e reduz muito a complexidade do programa, todavia o entendimento do uso dos parâmetros da rede treinada fica
+prejudicado devido a simplicidade dos comandos.
+* Mesmo utilizando uma GPU no Colab e apenas uma *epoch*, o treinamento da rede **demorou quase 2 horas** para ser finalizado.
+* O **resultado** foi muito bom, chegando a **93,6%** de acurácia nos dados de teste.
