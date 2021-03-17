@@ -2,7 +2,7 @@
 
 # Resumo das atividades realizadas no estudo de NLP
 
-## Dia xx/xx/xxxx - CONCEITOS BÁSICOS
+## Dia 08/02/2021 - CONCEITOS BÁSICOS
 
 ### Definição
 O Processamento de Linguagem Natural (PLN ou NLP) mescla ciência da computação, inteligência artificial e linguística se dedicando a geração e compreensão automática da linguagem natural.  Alguns desafios do PLN são compreensão de língua natural, fazer com que computadores extraiam sentido de linguagem humana ou natural e geração de língua natural.
@@ -75,7 +75,7 @@ Como o BOW é útil?
 
 Apesar de ser um modelo relativamente básico, o BOW é freqüentemente usado para tarefas de Processamento de Linguagem Natural (PNL), como Classificação de Texto. Seus pontos fortes estão na simplicidade: é barato de calcular e, às vezes, mais simples é melhor quando o posicionamento ou as informações contextuais não são relevantes.
 
-## Dia xx/xx/xxxx - CNNs PARA NLP
+## Dia 15/02/2021 - CNNs PARA NLP
 
 ### Teoria:
 
@@ -139,11 +139,11 @@ Apesar de ser um modelo relativamente básico, o BOW é freqüentemente usado pa
 * O **resultado** foi regular, chegando a **76,7%** de acurácia nos dados de teste. Entretanto, foi observado um comportamento típico de **overfitting**, quando, a medida que as épocas se sucediam, menor a acurácia nos dados de validação e maior nos de treinamento.
 * Para melhorar os resultados a melhor alternativa parece ser **aumentar a quantidade de dados utilizados e ajustar melhor os hiperparâmetros** da rede.
 
-## Dia xx/xx/xxxx - RNNs PARA NLP
+## Dia 16/02/2021 - RNNs PARA NLP
 
-## Dia xx/xx/xxxx - INTRODUÇÃO AOS MODELOS MODERNOS
+## Dia 22/02/2021 - INTRODUÇÃO AOS MODELOS MODERNOS
 
-## Dia xx/xx/xxxx - ARQUITETURA TRANSFORMER
+## Dia 23/02/2021 - ARQUITETURA TRANSFORMER
 
 ## Dia 01/03/2021 - INTRODUÇÃO AO BERT
 
@@ -167,6 +167,6 @@ prejudicado devido a simplicidade dos comandos.
 * O **resultado** foi muito bom, chegando a **93,6%** de acurácia nos dados de teste.
 
 
-## Dia xx/xx/xxxx - BERT
+## Dia 15/03/2021 - BERT
 
 ## Dia xx/xx/xxxx - CHATBOTS
