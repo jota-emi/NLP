@@ -9,14 +9,16 @@
 ### Teoria:
 
 #### CNN Básica:
-
+* ETAPA 1: CONVOLUÇÃO - Detectores de características
+* ETAPA 2: MAX POOLING - Reduz dimensionalidade
+* ETAPA 3: FLATENNING - Transformação para 1 vetor
+* ETAPA 4: FULL CONECTION - Rede Neural Densa
 #### Tratamento com Textos:
 
 * ONE-HOT ENCODING
   * Não existe medidor de relação entre as palavras;
   * Representação fácil, mas não efetiva.
-
-![image](https://user-images.githubusercontent.com/45316134/111528056-6e690d80-873f-11eb-92c8-82bdc8a55339.png)
+<img src="https://user-images.githubusercontent.com/45316134/111528056-6e690d80-873f-11eb-92c8-82bdc8a55339.png" width=75% height=75%>
 
 * WORD EMBEDDING
   * Vetor menor;
@@ -24,11 +26,11 @@
   * ML somente para fazer os cálculos;
   * Sentido parecido -> Contexto parecido -> Embedding parecido.
 
-![image][(https://user-images.githubusercontent.com/45316134/111528267-b5570300-873f-11eb-924e-ff1096a5666d.png) | width=100]
+<img src="https://user-images.githubusercontent.com/45316134/111528267-b5570300-873f-11eb-924e-ff1096a5666d.png" width=75% height=75%>
 
 #### Arquitetura para NLP
 
-![image](https://user-images.githubusercontent.com/45316134/111528316-c3a51f00-873f-11eb-832b-d1beebb75139.png)
+<img src="https://user-images.githubusercontent.com/45316134/111528316-c3a51f00-873f-11eb-832b-d1beebb75139.png" width=75% height=75%>
 
 
 * A convolução dos Kernels se dá de cima para baixo, nunca variando a quantidade de colunas;
@@ -38,10 +40,9 @@
 
 
 #### Artigos de Referência:
-- [A Visual Guide to Using BERT for the First Time](http://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time)
-- [BERT Explained: A Complete Guide with Theory and Tutorial](https://towardsml.com/2019/09/17/bert-explained-a-complete-guide-with-theory-and-tutorial/)
-- [A Simple Guide On Using BERT for Binary Text Classification.](https://medium.com/swlh/a-simple-guide-on-using-bert-for-text-classification-bbf041ac8d04)
-- [BERT Word Embeddings Tutorial](http://mccormickml.com/2019/05/14/BERT-word-embeddings-tutorial/)
+- [Understanding Convolutional Neural Networks for NLP](http://www.wildml.com/2015/11/understanding-convolutional-neural-networks-for-nlp/)
+- [Word Embedding - Transformando palavras em números](https://iaexpert.academy/2019/04/12/word-embedding-transformando-palavras-em-numeros/)
+- [Dot Product Explanation](https://www.mathsisfun.com/algebra/vectors-dot-product.html)
 
 
 ### Prática:
