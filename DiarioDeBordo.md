@@ -120,7 +120,7 @@ Apesar de ser um modelo relativamente básico, o BOW é freqüentemente usado pa
 #### Tutorial Utilizado:
 - [Udemy - Processamento de Linguagem Natural com Deep Learning (3h)](https://www.udemy.com/share/102C53B0QfdVhRTHk=/)
 
-#### Primeiro Algoritmo com BERT (KTrain)
+#### Primeiro Algoritmo com CNN para NLP:
 - [Classificação de Sentimentos com CNN](https://colab.research.google.com/drive/1z9ml_AywmZ3rJllVvr43Ma-wws1qHkfR?usp=sharing)
 
 #### Observações:
