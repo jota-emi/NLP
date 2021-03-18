@@ -141,6 +141,40 @@ Apesar de ser um modelo relativamente básico, o BOW é freqüentemente usado pa
 
 ## Dia 16/02/2021 - RNNs PARA NLP
 
+### Arquitetura:
+
+<img src="https://user-images.githubusercontent.com/45316134/111684292-4ba12c80-8805-11eb-9ba7-2697b2426790.png" width=100% height=100%>
+
+* Sistema de retroalimentação entre células;
+* Pode ser:
+  * One-to-Many
+  * One´to-One
+  * Many-to-One
+  * Many-to-Many
+ 
+### Vanish Gradient Problem
+* Pesos da camada de retroalimentação tendem a ficar muito pequenos
+#### Soluções
+* Exploding:
+  * Truncated Backpropagation;
+  * Penalidades;
+  * Gradient Clipping.
+* Vanishing:
+  * Inicialização dos pesos;
+  * Echo State Networks;
+  * LSTMs
+
+### LSTMs
+
+<img src="https://user-images.githubusercontent.com/45316134/111685196-62944e80-8806-11eb-824f-06b6bbc7aa51.png" width=70% height=70%>
+
+* Forget Gates
+* Seq-to-Seq
+* Encoder e Decoder
+* Cada novo estado é baseado no anterior
+* Mecanismo de Atenção
+
+
 ## Dia 22/02/2021 - INTRODUÇÃO AOS MODELOS MODERNOS
 
 ## Dia 23/02/2021 - ARQUITETURA TRANSFORMER
