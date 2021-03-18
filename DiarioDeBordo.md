@@ -174,6 +174,15 @@ Apesar de ser um modelo relativamente básico, o BOW é freqüentemente usado pa
 * Cada novo estado é baseado no anterior
 * Mecanismo de Atenção
 
+#### Artigos de Referência:
+- [Understanding RNNs](https://towardsdatascience.com/understanding-rnn-and-lstm-f7cdf6dfc14e)
+- [On the difficulty of training recurrent neural networks](http://proceedings.mlr.press/v28/pascanu13.pdf)
+- [Understanding LSTMs Networks](https://colah.github.io/posts/2015-08-Understanding-LSTMs/)
+- [Understanding LSTMs and It's diagrams](https://medium.com/mlreview/understanding-lstm-and-its-diagrams-37e2f46f1714)
+
+#### Tutorial Utilizado:
+- [Udemy - Processamento de Linguagem Natural com Deep Learning (1h)](https://www.udemy.com/share/102C53B0QfdVhRTHk=/)
+
 
 ## Dia 22/02/2021 - INTRODUÇÃO AOS MODELOS MODERNOS
 
