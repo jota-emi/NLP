@@ -188,6 +188,79 @@ Apesar de ser um modelo relativamente básico, o BOW é freqüentemente usado pa
 
 ## Dia 23/02/2021 - ARQUITETURA TRANSFORMER
 
+### Teoria:
+
+![image](https://user-images.githubusercontent.com/45316134/111827861-2e359680-88c9-11eb-9158-5bb0420df80a.png)
+
+
+* Attention Is All You Need (Mecanismos de Atenção)
+* Word Embedding
+* Self-Attention
+* Sentenças inteiras são processadas, não apenas palavra por palavra
+* Multi-Head Attention
+
+#### Self-Attention:
+* Duas Sequências iguais, A e B;
+* Calcula-se como cada elemento de A está relacionado com cada um de B;
+* Depois recombina-se A de acordo com essa relação.
+
+* **Antes**:
+   * Uma sequência A (e um contexto B).
+* **Depois**:
+    * Uma sequência na qual o elemento "i" é uma mistura dos elementos de A que estão relacionados com B.
+
+* Matematicamente, a rede irá gerar um valor que indica a similaridade entre dois vetores (Produto Escalar), esse produto existirá para cada par de palavras.
+
+#### Look-Ahead Mask:
+* Permitir que o decodificador tenha acesso as próximas palavras. Ex: Para prever uma palavra N, ele olha a palavra N+1
+
+#### Multi-Head Attention:
+* Divisão em subespaços diferentes, pega uma frase e divide um pedaços antes de calcular o self-attention, para aumentar a correlação.
+* Trata-se de uma camada densa.
+
+#### Positional Encoding:
+* Indica Posições;
+* Sem convolução e sem recorrência;
+* Adiciona valor as palavras, com o objetivo de indicar a ordem de cada uma na frase.
+
+#### Feed-Foward Layers:
+* Composta por duas tranformações lineares.
+
+#### Add and Norm:
+* Ajuda durante o backpropagation, fazendo o modelo "não esquecer" a informação da etapa anterior.
+
+#### Artigos de Referência:
+
+### Prática:
+
+#### Tutorial Utilizado:
+- [Udemy - Processamento de Linguagem Natural com Deep Learning (5h)](https://www.udemy.com/share/102C53B0QfdVhRTHk=/)
+
+#### Primeiro Algoritmo com Transformer
+- [Tradutor inglês-português com Transformer](https://colab.research.google.com/drive/1qlP8itUkmp3NwDPIm2x4Qo4agfZqvGJ4?usp=sharing)
+
+#### Observações:
+
+* Foi construída uma rede do tipo many-to-many, que receberia uma frase de até 12 palavras em inglês, e seria capaz de gerar uma nova frase, com a tradução para português da expressão de entrada.
+* A base de dados utilizada foi a *European Parliament Proceedings Parallel Corpus 1996-2011*, que contém mais de **2 milhões de sentenças** e **52 milhões de palavras** para cada um dos dois idiomas (Inglês e Português). Todavia, por questão operacional, foram exluídas as sentenças com mais de 12 palavras, totalizando assim **117.964 mil** setenças e um vocabulário setado de **8116 palavras**.
+* Para o pré-processamento dos dados, foram feitas limpezas através das expressões regulares, além da remoção das sentenças muito longas, tokenização, padding e batches.
+* A construção do modelo foi feitas passo-a-passo através de funções, para melhorar a compreensão da estrutura do modelo.
+* Apesar de tudo, os **conceitos novos** e a **complexidade do Tranformer** podem dificultar muito a compreensão total do funcionamento da rede, somente com mais prática e revisões será possível fixar totalmente os conceitos.
+* 
+* Devido a enorme quantidade de dados (1 milhão e 600 mil amostras), foi necessário reduzir a quantidade de dados para **480 mil amostras**, um valor ainda alto.
+* Mesmo utilizando uma GPU no Colab, o treinamento de cada época da rede neural demorou cerca de 11 minutos, totalizando **quase 2 horas** para ser finalizado. A demora era até esperada devido a grande quantidade de dados, porém não tanto, pois a rede não era tão densa quanto poderia ser.
+* A arquitetura da rede neural foi composta de:
+   * **1 camada de Embedding**
+   * **3 camadas de Convolução**
+   * **3 camadas de Pooling**
+   * **1 camada densa**
+   * **1 camada de Dropout**
+   * **1 camada densa de saída**
+* O **resultado** foi regular, chegando a **76,7%** de acurácia nos dados de teste. Entretanto, foi observado um comportamento típico de **overfitting**, quando, a medida que as épocas se sucediam, menor a acurácia nos dados de validação e maior nos de treinamento.
+* Para melhorar os resultados a melhor alternativa parece ser **aumentar a quantidade de dados utilizados e ajustar melhor os hiperparâmetros** da rede.
+
+
+
 ## Dia 01/03/2021 - INTRODUÇÃO AO BERT
 
 #### Artigos de Referência:
