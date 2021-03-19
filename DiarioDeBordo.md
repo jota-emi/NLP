@@ -230,6 +230,10 @@ Apesar de ser um modelo relativamente básico, o BOW é freqüentemente usado pa
 * Ajuda durante o backpropagation, fazendo o modelo "não esquecer" a informação da etapa anterior.
 
 #### Artigos de Referência:
+- [Attention is All You Need](https://proceedings.neurips.cc/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf)
+- [Transformer](https://towardsdatascience.com/transformers-89034557de14)
+- [The Illustrated Transformer](http://jalammar.github.io/illustrated-transformer/)
+- [How do Transformers Work in NLP? A Guide to the Latest State-of-the-Art Models](https://www.analyticsvidhya.com/blog/2019/06/understanding-transformers-nlp-state-of-the-art-models/)
 
 ### Prática:
 
@@ -245,19 +249,14 @@ Apesar de ser um modelo relativamente básico, o BOW é freqüentemente usado pa
 * A base de dados utilizada foi a *European Parliament Proceedings Parallel Corpus 1996-2011*, que contém mais de **2 milhões de sentenças** e **52 milhões de palavras** para cada um dos dois idiomas (Inglês e Português). Todavia, por questão operacional, foram exluídas as sentenças com mais de 12 palavras, totalizando assim **117.964 mil** setenças e um vocabulário setado de **8116 palavras**.
 * Para o pré-processamento dos dados, foram feitas limpezas através das expressões regulares, além da remoção das sentenças muito longas, tokenização, padding e batches.
 * A construção do modelo foi feitas passo-a-passo através de funções, para melhorar a compreensão da estrutura do modelo.
-* Apesar de tudo, os **conceitos novos** e a **complexidade do Tranformer** podem dificultar muito a compreensão total do funcionamento da rede, somente com mais prática e revisões será possível fixar totalmente os conceitos.
-* 
-* Devido a enorme quantidade de dados (1 milhão e 600 mil amostras), foi necessário reduzir a quantidade de dados para **480 mil amostras**, um valor ainda alto.
-* Mesmo utilizando uma GPU no Colab, o treinamento de cada época da rede neural demorou cerca de 11 minutos, totalizando **quase 2 horas** para ser finalizado. A demora era até esperada devido a grande quantidade de dados, porém não tanto, pois a rede não era tão densa quanto poderia ser.
-* A arquitetura da rede neural foi composta de:
-   * **1 camada de Embedding**
-   * **3 camadas de Convolução**
-   * **3 camadas de Pooling**
-   * **1 camada densa**
-   * **1 camada de Dropout**
-   * **1 camada densa de saída**
-* O **resultado** foi regular, chegando a **76,7%** de acurácia nos dados de teste. Entretanto, foi observado um comportamento típico de **overfitting**, quando, a medida que as épocas se sucediam, menor a acurácia nos dados de validação e maior nos de treinamento.
-* Para melhorar os resultados a melhor alternativa parece ser **aumentar a quantidade de dados utilizados e ajustar melhor os hiperparâmetros** da rede.
+* Apesar de tudo, os **conceitos novos** e a **complexidade do Transformer** podem dificultar muito a compreensão total do funcionamento da rede, somente com mais prática e revisões será possível fixar totalmente os conceitos.
+* Vários valores relacionados ao tamanho da rede e dos dados precisaram ser reduzidos por questão de tempo.
+* Como esperado, devido a complexidade do modelo e a grande quantidade de dados, o treinamento da rede demorou cerca de **20 minutos para cada época**, e assim **quase 2 horas** no total.
+* O **resultado** foi analisado a partir do método de predição, que recebe como entrada uma sentença em inglês e realiza a tradução, foi possível observar um resultado **promissor**, onde algumas frases simples a rede conseguiu traduzir perfeitamente. Houveram também vários erros de tradução, porém esperados devido a complexidade do problema e todas as reduções feitas na base e no tamanho do modelo.
+* Para melhorar os resultados a melhor alternativa parece ser:
+    *  **Utilizar a base de dados completa**;
+    *  **Aumentar o tamanho limite das frases**;
+    *  **Ajustar melhor os hiperparâmetros, aumentando o tamanho da rede**.
 
 
 
