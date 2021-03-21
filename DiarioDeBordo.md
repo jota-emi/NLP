@@ -186,6 +186,50 @@ Apesar de ser um modelo relativamente básico, o BOW é freqüentemente usado pa
 
 ## Dia 22/02/2021 - INTRODUÇÃO AOS MODELOS MODERNOS
 
+![image](https://user-images.githubusercontent.com/45316134/111914713-ea21cd80-8a51-11eb-94c2-cb6f3420d191.png)
+
+### Modelos baseados em LSTM
+
+#### ULMFiT
+* Universal Language Model Fine-Tuning;
+* ULMFiT é essencialmente um método para permitir a aprendizagem por transferência para qualquer tarefa de PNL e alcançar grandes resultados. Tudo isso, sem precisar treinar modelos do zero.
+* Alcança resultados de última geração usando novas técnicas como:
+   * Ajuste fino discriminativo
+   * Taxas de aprendizagem triangulares inclinadas e
+   * Descongelamento gradual
+   * Este método envolve o ajuste fino de um modelo de linguagem pré-treinado (LM), treinado no conjunto de dados do Wikitext 103, para um novo conjunto de dados de forma que ele não esqueça o que foi aprendido anteriormente.
+* Consiste em três etapas: 
+   * Primeiro, há um pré-treinamento geral do modelo em um domínio geral (como o conjunto de dados);
+   * Segundo, o modelo é ajustado para a tarefa alvo;
+   * Por último, é feito o ajuste fino do classificador multilabel onde o modelo fornece um status para cada frase de entrada.
+
+#### ELMo
+* Embeddings from Language Models
+* ELMo é uma representação de palavra contextualizada profunda que modela:
+   * (1) características complexas do uso da palavra (por exemplo, sintaxe e semântica); 
+   * (2) como esses usos variam entre os contextos linguísticos (ou seja, para modelar a polissemia). 
+* Esses vetores de palavras são funções aprendidas dos estados internos de um modelo de linguagem bidirecional profundo (biLM), que é pré-treinado em um grande corpus de texto; * Eles podem ser facilmente adicionados aos modelos existentes e melhorar significativamente o State-of-art em uma ampla gama de problemas desafiadores de NLP, incluindo Q&A, vinculação textual e análise de sentimento;
+* Os embeddings ELMo são sensíveis ao contexto, produzindo diferentes representações para palavras que compartilham a mesma grafia, mas têm significados diferentes (homônimos), como "bank" em "river bank" e "bank balance";
+
+
+### Mecanismo de Self-Attention
+
+* Os modelos mais comuns para modelagem de linguagem e tradução automática eram, e ainda são, em certa medida, redes neurais recorrentes com memória de curto prazo longa (LSTMs). Esses modelos geralmente usam um codificador e uma arquitetura de decodificador. Os modelos avançados usam o conceito de atenção.
+* Vaswani et al. (2017) introduziu uma nova forma de atenção, autoatenção e, com ela, uma nova classe de modelos, o modelo Transformer, por exemplo, ainda consiste na configuração típica de codificador-decodificador, mas usa uma nova arquitetura para ambos. O codificador consiste em 6 camadas com 2 subcamadas cada. A autoatenção recém-desenvolvida na primeira subcamada permite que um modelo transformador processe todas as palavras de entrada de uma vez e modele as relações entre todas as palavras em uma frase. Isso permite que os transformadores modelem dependências de longo alcance em uma frase mais rápido do que os modelos baseados em RNN e CNN. 
+* A melhoria da velocidade e o fato de que as cabeças de atenção individuais claramente aprendem a realizar diferentes tarefas levaram ao eventual desenvolvimento de Representações Codificadoras Bidirecionais de Transformadores. BERT e seus sucessores são os modelos de última geração usados para transferência de aprendizagem em NLP.
+
+### Modelos baseados em Self-Attention
+
+#### BERT
+
+* BERT (Bidirectional Encoder Representations from Transformers) é publicado por pesquisadores do grupo Google AI Language. É considerado um marco na comunidade PNL ao propor um modelo de linguagem bidirecional baseado no Transformer. O BERT usa o Transformer Encoder como a estrutura do modelo pré-treinamento e aborda as restrições unidirecionais ao propor novos objetivos pré-treinamento: o “masked language model” (MLM) e uma tarefa de “next sentence prediction” (NSP). O BERT aprimora o desempenho de última geração para onze tarefas de PNL e suas variantes aprimoradas AlBERT e RoBERTa também alcançam grande sucesso.
+
+#### GPT2
+* GPT2 (Generative Pre-Training-2) é proposto por pesquisadores da OpenAI. GPT-2 é um tremendo decodificador de Transformers multicamadas e a versão maior inclui 1,543 bilhões de parâmetros. Os pesquisadores criaram um novo conjunto de dados “WebText” para treinar o GPT-2 e atingem resultados de última geração em 7 dos 8 conjuntos de dados testados em uma configuração zero-shot, mas ainda não se encaixa no “WebText”.
+
+#### XLNet
+* XLNet é proposto por pesquisadores do Google Brain e CMU. Ele empresta ideias de modelagem de linguagem autorregressiva (por exemplo, Transformer-XL) e codificação automática (por exemplo, BERT), evitando suas limitações. Usando uma operação de permutação durante o treinamento, contextos bidirecionais podem ser capturados e torná-los um modelo de linguagem autoregressivo com reconhecimento de ordem generalizado. Empiricamente, o XLNet supera o BERT em 20 tarefas e atinge resultados de última geração em 18 tarefas.
+
 ## Dia 23/02/2021 - ARQUITETURA TRANSFORMER
 
 ### Teoria:
