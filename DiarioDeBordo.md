@@ -230,6 +230,10 @@ Apesar de ser um modelo relativamente básico, o BOW é freqüentemente usado pa
 #### XLNet
 * XLNet é proposto por pesquisadores do Google Brain e CMU. Ele empresta ideias de modelagem de linguagem autorregressiva (por exemplo, Transformer-XL) e codificação automática (por exemplo, BERT), evitando suas limitações. Usando uma operação de permutação durante o treinamento, contextos bidirecionais podem ser capturados e torná-los um modelo de linguagem autoregressivo com reconhecimento de ordem generalizado. Empiricamente, o XLNet supera o BERT em 20 tarefas e atinge resultados de última geração em 18 tarefas.
 
+### Artigos de Referência:
+- [Introduction: Transfer Learning for NLP](https://compstat-lmu.github.io/seminar_nlp_ss20/introduction-transfer-learning-for-nlp.html)
+- [The Illustrated BERT, ELMo, and co.](http://jalammar.github.io/illustrated-bert/)
+
 ## Dia 23/02/2021 - ARQUITETURA TRANSFORMER
 
 ### Teoria:
