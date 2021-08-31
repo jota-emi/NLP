@@ -1,7 +1,7 @@
 # Introdução
 
 ## Definição
-O Processamento de Linguagem Natural (PLN ou NLP) mescla ciência da computação, inteligência artificial e linguística se dedicando a geração e compreensão automática da linguagem natural.  Alguns desafios do PLN são compreensão de língua natural, fazer com que computadores extraiam sentido de linguagem humana ou natural e geração de língua natural.
+O Processamento de Linguagem Natural (NLP ou PLN) mescla ciência da computação, inteligência artificial e linguística se dedicando a geração e compreensão automática da linguagem natural.  Alguns desafios do PLN são compreensão de língua natural, fazer com que computadores extraiam sentido de linguagem humana ou natural e geração de língua natural.
 ## Bibliotecas Iniciais
   ### NLTK
   ### SpaCy
